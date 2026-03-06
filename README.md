@@ -24,3 +24,27 @@ Input: numbers = {2, 7, 11, 15}, target = 9
 Output: 1 2 (since numbers[0] + numbers[1] = 2 + 7 = 9)
 
 The code is implemented in `Array/twoSum_SortedInput.cpp` and demonstrates the two-pointer solution in the `twoSum` function.
+
+## Array/3sum.cpp
+
+Solves the 3Sum problem from LeetCode.
+
+### Problem Description
+Given an integer array `nums`, return all the triplets `[nums[i], nums[j], nums[k]]` such that `i != j`, `i != k`, and `j != k`, and `nums[i] + nums[j] + nums[k] == 0`.
+
+Notice that the solution set must not contain duplicate triplets.
+
+### Approach
+The solution uses a **sorting and two-pointer technique**:
+1. Sort the input array.
+2. Iterate through the array with the first pointer `i` from 0 to n-3.
+3. For each `i`, use two pointers `left` and `right` to find pairs that sum to `-nums[i]`.
+4. Skip duplicates for `i`, `left`, and `right` to avoid duplicate triplets.
+5. If the sum of `nums[left] + nums[right]` equals the target, add the triplet and move both pointers.
+6. If less, move `left` right; if more, move `right` left.
+
+### Example
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+
+The code is implemented in `Array/3sum.cpp` and demonstrates the sorting and two-pointer solution in the `threeSum` function.
